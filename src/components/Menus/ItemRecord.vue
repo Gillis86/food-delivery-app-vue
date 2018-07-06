@@ -75,9 +75,12 @@ export default {
       
       &--quantity{
           font-size: 1.4rem;
-          background: $color-secondary;
+          & span{
+              background: $color-secondary;
           color:$color-white;
-          border-radius: $border-radius; 
+          border-radius: $border-radius;
+          padding:.5rem;
+          } 
       }
       &--recall{
           color:$color-secondary;

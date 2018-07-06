@@ -22,16 +22,19 @@
         border-bottom: 2px solid $color;
         margin-bottom:2.5rem;
         padding-bottom: 1rem;
+        display: table;
+        border-collapse: separate;
         width:100%;
         @media screen and (max-width:600px){
             width:100%
         }
       
       & > li{
-          display: inline-block;
+          //display: inline-block;
           text-transform: uppercase;
           padding:0 1rem;
           overflow: visible;
+          display: table-cell;
           
           &:not(:last-child){
               margin-right: 2rem;
@@ -51,10 +54,10 @@
     }
     &--ingredients{
         font-size:.8rem;
-        display: table;
-          @include clearfix;
+        //display: table;
+          //@include clearfix;
           & > div{
-              display: table-cell;
+              display: inline-block;
               &:not(:last-child){
                   padding-right: 1rem;
               }
