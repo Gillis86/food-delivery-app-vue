@@ -1,13 +1,13 @@
 <template>
-<div class="order__checkout">
-    <div v-if="orders.length" class="order__checkout--total">
+<tr class="order__checkout">
+    <td v-if="orders.length" class="order__checkout--total">
       <h3 class="title">totale</h3>
       <div class="total"><span>{{calculateTotal}}€</span></div>
-  </div>
-  <div class="order__checkout--buy">
+  </td>
+  <td class="order__checkout--buy">
       <button @click="checkOrder">Acquista</button>
-  </div>
-</div>
+  </td>
+</tr>
   
 </template>
 
@@ -37,10 +37,8 @@ export default {
 
 <style lang="scss">
 .order__checkout{
-    @include clearfix;
+
     &--buy{
-        float:left;
-        margin-top: 3rem;
         
         button{
            @include addButton($color-tertiary);
@@ -49,9 +47,7 @@ export default {
     }
 
     &--total{
-        float:right;
-    margin-right:3rem;
-    margin-bottom: 1rem;
+    
     & .title{
         padding:1rem;
         text-transform:uppercase;
@@ -59,7 +55,7 @@ export default {
         font-size: 2rem;
     }
     & .total{
-        text-align: center;
+        padding:1rem;
         font-size:2rem;
     }
 

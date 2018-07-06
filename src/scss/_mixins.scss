@@ -18,28 +18,21 @@
 }
 
 @mixin itemRecord($color){
-  list-style-type: none;
-        border-bottom: 2px solid $color;
-        margin-bottom:2.5rem;
-        padding-bottom: 1rem;
-        display: table;
-        border-collapse: separate;
-        width:100%;
+        
+        //margin-bottom:2.5rem;
+        //padding-bottom: 1rem;
         @media screen and (max-width:600px){
             width:100%
         }
       
-      & > li{
+      & > td{
           //display: inline-block;
           text-transform: uppercase;
-          padding:0 1rem;
+          text-align:center;
+          padding:1rem;
+            padding-bottom:2rem;
+            border-bottom: 2px solid $color;
           overflow: visible;
-          display: table-cell;
-          
-          &:not(:last-child){
-              margin-right: 2rem;
-              
-          }
       }
       &--name{
         font-size:1.4rem;
@@ -49,13 +42,36 @@
     }
     &--price{
         font-size:1.7rem;
-        float:right;
-        border-left:3px solid $color
+        
+    }
+    &--addRemoveButtons{
+        & button{
+            border:none;
+            background: $color;
+            border-radius: 60%;
+            padding:.2rem;
+            position: relative;
+            cursor:pointer;
+            transition: transform .2s;
+            &:not(:last-child){
+                margin-right:1rem;
+            }
+            &:hover{
+                transform: translateY(-.5px);
+                box-shadow: 0 .5rem 1rem rgba($color,.5)
+            }
+            &:active{
+                transform: translateY(3px);
+                box-shadow: 0 .25rem .5rem rgba($color,.5);
+                }
+
+            &:focus{
+                outline:none;
+            }
+        }
     }
     &--ingredients{
         font-size:.8rem;
-        //display: table;
-          //@include clearfix;
           & > div{
               display: inline-block;
               &:not(:last-child){
@@ -80,26 +96,19 @@
    }
 }
 
-@mixin icon($color,$hoverTranslation:-.5px,$activeTranslation:-.5px){
+@mixin icon($color,$activeTranslation:-.5px){
   display: inline-block;
-  width: 2em;
-  height: 2em;
-  line-height: 0;
-  border-radius: $border-radius;
-  transition: transform .2s;
-  padding:.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 auto;
+  
+  background: none !important;
+  padding: .1rem .1rem;
   fill: $color;
   background: transparent;
-  cursor: pointer;
-  transform: translateY(10%);
-  &:hover{
-    transform: translateY($hoverTranslation);
-    box-shadow: 0 .5rem 1rem rgba($color,.5)
-}
-&:active{
-    transform: translateY(3px);
-    box-shadow: 0 .25rem .5rem rgba($color,.5)
-    }
+  
+
+ 
 }
 
 @mixin addButton($color){
@@ -120,6 +129,8 @@
        &:active{
            transform: translateY(-1px);
            box-shadow: 0 .25rem .5rem rgba($color,.5);
-
+       }
+       &:focus{
+           outline:none;
        }
 }

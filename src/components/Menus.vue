@@ -6,11 +6,11 @@
     <div v-if="menuData !== null" class="menu__selected">
       <div class="is-active">
         <div class="menu__container">
-          <div class="menu__container--box" v-for="(item, key) in menuList" :key="key">
-              <div class="title">{{item.title}}</div>
+          <table class="menu__container--box" v-for="(item, key) in menuList" :key="key">
+              <tr><td><div class="title">{{item.title}}</div></td></tr>
                   <item-record v-for="data in item.data" 
                           :key="data.id" :data="data"></item-record>
-              </div>
+              </table>
             </div> 
         </div>
     </div>
@@ -129,14 +129,15 @@ export default {
   }
 }
  .menu__container{
-          display: block;
-          margin: 0 auto;
-          width:90%;
+          width:100%;
       & > *{
           padding:0 2rem;
           
       }
       &--box{
+        width:100%;
+        border-collapse: separate;
+        border-spacing:2rem;
         &:not(:last-child){
           margin-bottom: 4rem;
         }

@@ -1,13 +1,18 @@
 <template>
   <div class="orders">
-      <div :style="{height:setHeight}" class="orders__container">
-        <div class="orders__container--title">
-          <h3 v-if="orders.length">il tuo ordine</h3>
-          <h3 v-else>il tuo carrello è vuoto</h3>
+      <table :style="{height:setHeight}" class="orders__container">
+        <tr>
+          <td>
+            <div class="orders__container--title">
+                <h3 v-if="orders.length">il tuo ordine</h3>
+                <h3 v-else>il tuo carrello è vuoto</h3>
           </div>
+          </td>
+        </tr>
         <order-record v-for="order in orders" :key="order.orderID" :order="order"></order-record>
         <order-checkin v-if="orders.length" :orders="orders"></order-checkin>
-      </div>
+      </table>
+      
       <order-checkout></order-checkout>
   </div>
 </template>
@@ -45,6 +50,8 @@ export default {
       background: $color-white;
       position:absolute;
       width:70%;
+      border-collapse: separate;
+      border-spacing:2rem;
       top:45%;
       left:50%;
       transform: translate(-50%,-50%);
