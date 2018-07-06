@@ -9,9 +9,9 @@
     <div @click="changeView('appOrders')"  class="navbar__item">
       <h3 class="navbar__title">your order</h3>
     </div>
-    <div @click="changeView('appContacts')" class="navbar__item">
+    <!--<div @click="changeView('appContacts')" class="navbar__item">
       <h3 class="navbar__title">contacts</h3>
-    </div>
+    </div>-->
   </nav>
 </template>
 
@@ -39,7 +39,7 @@ export default {
   z-index: 3000;
   &__item{
     float:left;
-    width:25%;
+    width:33.33333333%;
     padding:2rem;
     @media screen and (max-width:600px){
             padding:1.5rem;
