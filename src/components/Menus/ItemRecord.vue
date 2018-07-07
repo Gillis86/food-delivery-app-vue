@@ -2,7 +2,6 @@
     <tr class="item__record">
       <td class="item__record--name">
           <span>{{data.name}}</span>
-        <span v-if="recallWarning">aggiungi l'ordine</span>
     </td>
       <td v-if="data.ingredients" class="item__record--ingredients">
           <div><ingredient v-for="ingredient in data.ingredients" :key="ingredient" :ingredient="ingredient"></ingredient>   </div>
@@ -34,8 +33,8 @@
         </symbol>
       </td>
       <td class="item__record--quantity"><span>{{data.quantity}}</span></td>
-      <td><button @click.stop="makeOrder(data)" class="item__record--btn">aggiungi</button></td> 
-      <!-- <td class="item__record--recall">
+      <td><button @click.stop="makeOrder(data)" class="item__record--btn">aggiungi al carrello</button></td> 
+      <!-- <td class="">
           
       </td> -->
   </tr>
@@ -50,7 +49,7 @@ export default {
    data(){
        return{
            quantityModified: false,
-           recallWarning: this.quantityModified && this.data.quantity!==0
+
        }
    },
    components:{
@@ -95,10 +94,7 @@ export default {
           padding:.5rem;
           } 
       }
-      &--recall{
-          color:$color-secondary;
-          font-weight: 700;
-      }
+
   }
 .icon__item, .icon__ingredients {
   @include icon($color-white);
