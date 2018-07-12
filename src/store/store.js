@@ -23,11 +23,11 @@ export default new Vuex.Store({
             commit('DECREMENT_QUANTITY',product)
         }
     },
-    plugins:[
+   /*  plugins:[
         vuejsStorage({
             keys: ['products',"ingredients","orders"], 
             namespace: 'state',
             storage: window.sessionStorage 
           })
-    ]
+    ] */
 })

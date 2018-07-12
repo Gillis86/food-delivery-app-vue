@@ -32,8 +32,11 @@ export default {
     }
   },
   created(){
+    console.log(sessionStorage)
+    console.log(this.$store.state.products)
     this.$store.dispatch('setProducts')
     this.$store.dispatch('setIngredients')
+    
   },
   mounted(){
     this.navBarWidth = this.$children[0].$el.getBoundingClientRect().height;

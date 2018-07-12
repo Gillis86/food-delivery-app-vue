@@ -8,16 +8,22 @@
     </div>
     <div @click="changeView('appOrders')"  class="navbar__item">
       <h3 class="navbar__title">your order</h3>
+      <span>{{orders}}</span>
     </div>
-    <!--<div @click="changeView('appContacts')" class="navbar__item">
+    <!-- <div @click="changeView('appContacts')" class="navbar__item">
       <h3 class="navbar__title">contacts</h3>
-    </div>-->
+    </div> -->
   </nav>
 </template>
 
 <script>
 
 export default {
+  computed:{
+    orders(){
+      return this.$store.getters.getOrders.length
+    }
+  },
   methods:{
   changeView(component){
     this.$parent.$emit('changeView',component)
@@ -63,16 +69,21 @@ export default {
     }
     &:nth-child(3){
       background: $color-tertiary;
+      display: flex;
+      justify-content: center;
+      & span{
+        margin-left:1rem;
+      }
       &:hover{
         background: darken($color-tertiary,5%)
       }
     }
-    &:nth-child(4){
+    /* &:nth-child(4){
       background: $color-quaternary;
       &:hover{
         background: darken($color-quaternary,5%)
       }
-    }
+    } */
   }
   &__title{
     font-size: 2rem;
