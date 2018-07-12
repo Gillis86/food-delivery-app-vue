@@ -55,7 +55,10 @@ export default {
 
   created(){
     if(sessionStorage['currentDataLoad']){
-      this.menuData = this.$store.getters.getProduct(sessionStorage['currentDataLoad'])
+      setTimeout(()=>{
+        this.menuData = this.$store.getters.getProduct(sessionStorage['currentDataLoad'])
+      },500)
+      
     }
       this.$on('changeMenu', data =>  this.menuData = data )
   },

@@ -1,13 +1,31 @@
 const path = require('path')
 const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
+  mode:'development',
   entry: ['babel-polyfill','./src/main.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: 'dist/',
     filename: 'bundle.js'
+  },
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
   },
   module: {
     rules: [
@@ -24,7 +42,18 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options:{
+              resources: [
+                path.resolve(__dirname,'./src/scss/_variables.scss'),
+                path.resolve(__dirname,'./src/scss/_mixins.scss'),
+                path.resolve(__dirname,'./src/scss/_general.scss'),
+              ]
+            }
+          }
         ],
+       
       },
       {
         test: /\.sass$/,
@@ -81,6 +110,9 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new VueLoaderPlugin()
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
@@ -105,12 +137,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({

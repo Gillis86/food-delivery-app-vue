@@ -73,9 +73,18 @@ export default {
       justify-content: center;
       & span{
         margin-left:1rem;
+        font-size:1rem;
+        border-radius:50%;
+        color:$color-white;
+        padding:.4rem 1rem;
+        background-color: darken($color-tertiary,5%);
+        border:2px solid $color-white;
       }
       &:hover{
-        background: darken($color-tertiary,5%)
+        background: darken($color-tertiary,5%);
+        & span{
+          background: $color-tertiary;
+        }
       }
     }
     /* &:nth-child(4){

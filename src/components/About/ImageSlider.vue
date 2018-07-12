@@ -19,18 +19,18 @@ data(){
     currentNumber: 0,
     timer: null,
     images:[
-      'dist/assets/food-slide-1.jpg',
-      'dist/assets/food-slide-2.jpg',
-      'dist/assets/food-slide-3.jpg',
-      'dist/assets/food-slide-4.jpg',
-      'dist/assets/food-slide-5.jpg',
+      {src:'dist/assets/food-slide-1.jpg',index:0},
+      {src:'dist/assets/food-slide-2.jpg',index:1},
+      {src:'dist/assets/food-slide-3.jpg',index:2},
+      {src:'dist/assets/food-slide-4.jpg',index:3},
+      {src:'dist/assets/food-slide-5.jpg',index:4},
     ],
     titles:[
-        'Ipsum Lorem',
-        'Lorem Ipsum',
-        'Sic Dolor',
-        'Amet',
-        'Boh',
+        'VueJS',
+        'Vuex',
+        'Webpack',
+        'Firebase',
+        'axios',
         
     ]
   }
