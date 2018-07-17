@@ -4,7 +4,7 @@ Minimal interface for a food Delivery App
 
 # Demo
 
-https://http://d19lru4vqc537.cloudfront.net/
+https://d19lru4vqc537.cloudfront.net/
 
 # To DO
 
