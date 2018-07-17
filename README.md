@@ -8,11 +8,11 @@ https://d19lru4vqc537.cloudfront.net/
 
 # To DO
 
-responsive
+mobile responsive
 
-improve form validation and data storage
+improve form validation and set POST request for the orders
 
-Image Optimization WebPack
+Image Optimization with WebPack
 
 
 # Screenshot
