@@ -43,7 +43,7 @@ export default {
         {id:2,img:'dist/assets/pasta.jpg',title:'Primi Piatti',data:this.$store.getters.getProduct('primiPiatti')},
         {id:3,img:'dist/assets/carne.jpg',title:'Secondi Piatti',data:this.$store.getters.getProduct('secondiPiatti')},
         {id:4,img:'dist/assets/dolci.jpg',title:'Dolci',data:this.$store.getters.getProduct('dolci')},
-        {id:5,img:'dist/assets/bevande.jpg',title:'bevande'},
+        {id:5,img:'dist/assets/bevande.jpg',title:'bevande',data:this.$store.getters.getProduct('bevande')},
       ]
     },
     menuList() {

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div @click="changeView('appAbout')" class="navbar__item">
-      <h3 class="navbar__title">about us</h3>
+      <h3 class="navbar__title">about</h3>
     </div>
     <div @click="changeView('appMenus')"  class="navbar__item">
       <h3 class="navbar__title">menu</h3>

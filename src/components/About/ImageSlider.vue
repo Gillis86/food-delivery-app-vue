@@ -1,42 +1,57 @@
 <template>
 <div  class="image-slider">
-    <transition @enter="enter" @leave="leave" :css="false" mode="out-in">
+
+    <carousel
+    perPage="1"
+    paginationColor="#FDA403"
+    paginationActiveColor="#E8751A">
+        <slide class="slide__container" v-for="img in images" :key="img.index">
+            <div class="image-slider--slide" 
+                :style="{ backgroundImage: 'url(' + img.src + ')' }">
+                <h1 class="heading">{{titles[img.index]}}</h1>
+            </div>
+        </slide>
+
+    </carousel>
+    <!-- <transition @enter="enter" @leave="leave" :css="false" mode="out-in">
         <div class="slide__container" v-for="number in [currentNumber]" :key="number">
             <div @mouseover="stopRotation()" @mouseout="startRotation()" class="image-slider--slide" 
                 :style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length] + ')' }">
                 <h1 class="heading">{{titles[Math.abs(currentNumber) % images.length]}}</h1>
             </div>
         </div>
-    </transition>   
+    </transition>    -->
 </div> 
 </template>
 
 <script>
-
+import { Carousel, Slide } from 'vue-carousel';
 export default {
+  components: {
+    Carousel,
+    Slide
+  },
 data(){
   return{
     currentNumber: 0,
     timer: null,
     images:[
       {src:'dist/assets/food-slide-1.jpg',index:0},
-      {src:'dist/assets/food-slide-2.jpg',index:1},
-      {src:'dist/assets/food-slide-3.jpg',index:2},
-      {src:'dist/assets/food-slide-4.jpg',index:3},
-      {src:'dist/assets/food-slide-5.jpg',index:4},
+      {src:'dist/assets/food-slide-3.jpg',index:1},
+      {src:'dist/assets/food-slide-4.jpg',index:2},
+      {src:'dist/assets/food-slide-5.jpg',index:3},
     ],
     titles:[
-        'VueJS',
-        'Vuex',
-        'Webpack',
-        'Firebase',
-        'axios',
+        'Cibi biologici',
+        'Primi e secondi di pesce',
+        "Dolci",
+        'Pizze',
         
     ]
   }
 },
 methods:{
-    startRotation() {
+   /*  startRotation() {
             this.timer = setInterval(this.next, 5000);
         },
     
@@ -61,7 +76,8 @@ methods:{
 },
 mounted() {
         this.startRotation();
-    },
+     */
+    }
 }
 </script>
 

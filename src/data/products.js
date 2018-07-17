@@ -113,5 +113,15 @@ export default {
             ]
         },       
     },
-    bevande:{}
+    bevande:{
+        type:"bevande",
+        typeOne:{
+            title:"Bevande",
+            data:[
+                {id:42,type:"bevande",name:"Acqua",price:1.00,quantity:0,inventory:100},
+                {id:43,type:"bevande",name:"Coca Cola",price:1.50,quantity:0,inventory:100},
+                {id:44,type:"bavande",name:"Birra",price:2.90,quantity:0,inventory:100},
+            ]
+        }
+    }
 }
