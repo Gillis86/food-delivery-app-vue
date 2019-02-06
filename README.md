@@ -4,7 +4,7 @@ Minimal interface for a food Delivery App
 
 # Demo
 
-https://d19lru4vqc537.cloudfront.net/
+To do (I have close my AWS account)
 
 # To DO
 
